@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">The Best Co</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="active nav-link" [routerLink]="['/payments']">Payments</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['/customers']">Customers</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['/billers']">Billers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

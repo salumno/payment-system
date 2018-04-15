@@ -1,0 +1,19 @@
+<div class="pull-right">
+  <button class="btn btn-default" [routerLink]="['/biller-add']">Add New Biller</button>
+</div>
+<div class="clearfix"></div>
+<hr>
+<div style="padding-top: 20px">
+  <table class="table table-hover" style="width:100%">
+    <tr>
+      <th>Company Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let biller of billers">
+      <td>{{biller.companyName}}</td>
+      <td><a [routerLink]="['/biller-edit', biller.id]" class="glyphicon glyphicon-edit"></a></td>
+      <td><a (click)="removeBiller(biller.id)"  class="glyphicon glyphicon-trash"></a></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="biller-form">
+  <div class="padding-5">
+    <div class="pull-left">
+      <button class="btn btn-default" routerLink="/billers"><span class="glyphicon glyphicon-chevron-left"></span> Cancel </button>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-danger" (click)="remove(biller.id)" *ngIf="biller.isLoaded" type="button">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <form #billerForm="ngForm" (ngSubmit)="saveForm(billerForm.value)">
+    <input type="hidden" name="isLoaded" [(ngModel)]="biller.isLoaded">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="control-label" for="company-name">Company Name<span class="attention"> *</span></label>
+        </div>
+        <div class="col-md-8">
+          <input id="company-name" [(ngModel)]="biller.companyName" class="form-control" required name="companyName">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success form-control" [disabled]="!billerForm.form.valid">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+@media all and (min-width: 400px) {
+  .payment-form {
+    padding: 10px 0;
+  }
+
+  .payment-form form {
+    margin: 0 auto;
+    max-width: 690px;
+  }
+}

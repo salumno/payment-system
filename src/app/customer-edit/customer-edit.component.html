@@ -1,0 +1,57 @@
+<div class="customer-form">
+  <div class="padding-5">
+    <div class="pull-left">
+      <button class="btn btn-default" routerLink="/customers"><span class="glyphicon glyphicon-chevron-left"></span> Cancel </button>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-danger" (click)="remove(customer.id)" *ngIf="customer.isLoaded" type="button">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <form #customerForm="ngForm" (ngSubmit)="saveForm(customerForm.value)">
+    <input type="hidden" name="isLoaded" [(ngModel)]="customer.isLoaded">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="control-label" for="first-name">First Name<span class="attention"> *</span></label>
+        </div>
+        <div class="col-md-8">
+          <input id="first-name" class="form-control" [(ngModel)]="customer.firstName" required name="firstName">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="control-label" for="last-name">Last Name<span class="attention"> *</span></label>
+        </div>
+        <div class="col-md-8">
+          <input id="last-name" class="form-control" [(ngModel)]="customer.lastName" required name="lastName">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="control-label" for="birthday">Date Of Birth (dd.MM.yyyy)<span class="attention"> *</span></label>
+        </div>
+        <div class="col-md-8">
+          <input id="birthday" class="form-control" [(ngModel)]="customer.dateOfBirth" required name="dateOfBirth">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="control-label" for="address">Address<span class="attention"> *</span></label>
+        </div>
+        <div class="col-md-8">
+          <input id="address" class="form-control" [(ngModel)]="customer.address" required name="address">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="form-control btn btn-success" type="submit" [disabled]="!customerForm.form.valid">Save</button>
+    </div>
+  </form>
+</div>
